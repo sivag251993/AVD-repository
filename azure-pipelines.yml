@@ -20,19 +20,19 @@ variables:
   value: 'imageWin11MultiTemplate'
 
 steps:
-- task: AzureCLI@2
-  displayName: "Copy Install Script"
-  inputs:
-    azureSubscription: 'avd-pipe'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az storage blob upload \
-        --account-name sivastorageavd001 \
-        --container-name script-directory \
-        --overwrite true \
-        --name install-software.ps1 \
-        --file install-software.ps1
+# - task: AzureCLI@2
+#   displayName: "Copy Install Script"
+#   inputs:
+#     azureSubscription: 'avd-pipe'
+#     scriptType: 'bash'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: |
+#       az storage blob upload \
+#         --account-name sivastorageavd001 \
+#         --container-name script-directory \
+#         --overwrite true \
+#         --name install-software.ps1 \
+        # --file install-software.ps1
       
 - task: AzureResourceManagerTemplateDeployment@3
   displayName: "Deploy Template"
