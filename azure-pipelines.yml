@@ -15,7 +15,7 @@ variables:
 - name: Location
   value: 'eastus'
 - name: ResourceGroup
-  value: 'AZIMEUS-RG'
+  value: 'SivaG-RG'
 - name: ImageTemplateName
   value: 'imageWin11MultiTemplate'
 
@@ -23,13 +23,13 @@ steps:
 - task: AzureCLI@2
   displayName: "Copy Install Script"
   inputs:
-    azureSubscription: 'con-devops'
+    azureSubscription: 'avd-pipe'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az storage blob upload \
-        --account-name softwaresb \
-        --container-name scripts \
+        --account-name sivastorageavd001 \
+        --container-name script-directory \
         --overwrite true \
         --name install-software.ps1 \
         --file install-software.ps1
@@ -39,8 +39,8 @@ steps:
   continueOnError: true
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'con-devops'
-    subscriptionId: '48b01986-9159-4815-a592-ef1c0cf2d1ff'
+    azureResourceManagerConnection: 'avd-pipe'
+    subscriptionId: 'efb73a22-05b0-4760-bd52-733b0d730237'
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(ResourceGroup)'
     location: '$(Location)'
@@ -52,7 +52,7 @@ steps:
 - task: AzurePowerShell@5
   displayName: "Install Az.ImageBuilder"
   inputs:
-    azureSubscription: 'con-devops'
+    azureSubscription: 'avd-pipe'
     ScriptType: 'InlineScript'
     Inline: 'Install-Module -name Az.ImageBuilder -AllowPrerelease -Force -Scope CurrentUser'
     azurePowerShellVersion: 'LatestVersion'
@@ -60,7 +60,7 @@ steps:
 - task: AzurePowerShell@5
   displayName: "Build Image"
   inputs:
-    azureSubscription: 'con-devops'
+    azureSubscription: 'avd-pipe'
     ScriptType: 'InlineScript'
     Inline: 'Start-AzImageBuilderTemplate -ResourceGroupName $(ResourceGroup) -Name $(ImageTemplateName)'
     azurePowerShellVersion: 'LatestVersion'
@@ -68,7 +68,7 @@ steps:
 - task: AzurePowerShell@5
   displayName: "Remove Template"
   inputs:
-    azureSubscription: 'con-devops'
+    azureSubscription: 'avd-pipe'
     ScriptType: 'InlineScript'
     Inline: 'Remove-AzImageBuilderTemplate -ImageTemplateName $(ImageTemplateName) -ResourceGroupName $(ResourceGroup)'
     azurePowerShellVersion: 'LatestVersion'
