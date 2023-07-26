@@ -1,0 +1,74 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# trigger:
+# - main
+trigger: none
+pr: none
+
+pool:
+  default
+
+variables:
+- name: Location
+  value: 'eastus'
+- name: ResourceGroup
+  value: 'AZIMEUS-RG'
+- name: ImageTemplateName
+  value: 'imageWin11MultiTemplate'
+
+steps:
+- task: AzureCLI@2
+  displayName: "Copy Install Script"
+  inputs:
+    azureSubscription: 'con-devops'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az storage blob upload \
+        --account-name softwaresb \
+        --container-name scripts \
+        --overwrite true \
+        --name install-software.ps1 \
+        --file install-software.ps1
+      
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: "Deploy Template"
+  continueOnError: true
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'con-devops'
+    subscriptionId: '48b01986-9159-4815-a592-ef1c0cf2d1ff'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(ResourceGroup)'
+    location: '$(Location)'
+    templateLocation: 'Linked artifact'
+    csmFile: 'Win11MultiTemplate.json'
+    csmParametersFile: 'Win11MultiTemplate.parameters.json'
+    deploymentMode: 'Incremental'
+
+- task: AzurePowerShell@5
+  displayName: "Install Az.ImageBuilder"
+  inputs:
+    azureSubscription: 'con-devops'
+    ScriptType: 'InlineScript'
+    Inline: 'Install-Module -name Az.ImageBuilder -AllowPrerelease -Force -Scope CurrentUser'
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: AzurePowerShell@5
+  displayName: "Build Image"
+  inputs:
+    azureSubscription: 'con-devops'
+    ScriptType: 'InlineScript'
+    Inline: 'Start-AzImageBuilderTemplate -ResourceGroupName $(ResourceGroup) -Name $(ImageTemplateName)'
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: AzurePowerShell@5
+  displayName: "Remove Template"
+  inputs:
+    azureSubscription: 'con-devops'
+    ScriptType: 'InlineScript'
+    Inline: 'Remove-AzImageBuilderTemplate -ImageTemplateName $(ImageTemplateName) -ResourceGroupName $(ResourceGroup)'
+    azurePowerShellVersion: 'LatestVersion'

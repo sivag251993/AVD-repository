@@ -1,0 +1,205 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "artifactsLocation": {
+            "value": "https://wvdportalstorageblob.blob.core.windows.net/galleryartifacts/Configuration_1.0.02370.157.zip"
+        },
+        "intune": {
+            "value": false
+        },
+        "hostpoolName": {
+            "value": "hostpool-avs"
+        },
+        "hostpoolDescription": {
+            "value": "Created through the Azure Virtual Desktop extension"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "validationEnvironment": {
+            "value": false
+        },
+        "hostpoolType": {
+            "value": "Pooled"
+        },
+        "loadBalancerType": {
+            "value": "BreadthFirst"
+        },
+        "preferredAppGroupType": {
+            "value": "Desktop"
+        },
+        "publicNetworkAccess": {
+            "value": "Enabled"
+        },
+        "vmResourceGroup": {
+            "value": "avd-rg"
+        },
+        "vmNamePrefix": {
+            "value": "win11-avs-2"
+        },
+        "vmLocation": {
+            "value": "eastus"
+        },
+        "vmImageType": {
+            "value": "CustomImage"
+        },
+        "vmSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "vmNumberOfInstances": {
+            "value": 2
+        },
+        "vmDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "vmDiskSizeGB": {
+            "value": 0
+        },
+        "vmHibernate": {
+            "value": false
+        },
+        "bootDiagnostics": {
+            "value": {
+                "enabled": true
+            }
+        },
+        "securityType": {
+            "value": "Standard"
+        },
+        "secureBoot": {
+            "value": false
+        },
+        "vTPM": {
+            "value": false
+        },
+        "customConfigurationScriptUrl": {
+            "value": ""
+        },
+        "virtualNetworkResourceGroupName": {
+            "value": "avd-rg"
+        },
+        "existingVnetName": {
+            "value": "avd-vnet"
+        },
+        "existingSubnetName": {
+            "value": "default"
+        },
+        "createNetworkSecurityGroup": {
+            "value": false
+        },
+        "aadJoin": {
+            "value": true
+        },
+        "domain": {
+            "value": ""
+        },
+        "ouPath": {
+            "value": ""
+        },
+        "addToWorkspace": {
+            "value": true
+        },
+        "virtualMachineTags": {
+            "value": {
+                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+            }
+        },
+        "apiVersion": {
+            "value": "2022-10-14-preview"
+        },
+        "deploymentId": {
+            "value": "d2726938-f3e6-4e9c-ba81-176f103c523a"
+        },
+        "vmCustomImageSourceId": {
+            "value": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/AZIMEUS-RG/providers/Microsoft.Compute/galleries/Win11CustomGallery/images/Win11CustomImage/versions/1.0.1"
+        },
+        "maxSessionLimit": {
+            "value": 2
+        },
+        "workspaceResourceGroup": {
+            "value": "avd-rg"
+        },
+        "workspaceName": {
+            "value": "win11-workspace"
+        },
+        "workspaceLocation": {
+            "value": "eastus"
+        },
+        "allApplicationGroupReferences": {
+            "value": ""
+        },
+        "isNewWorkspace": {
+            "value": false
+        },
+        "systemData": {
+            "value": {
+                "aadJoinPreview": false,
+                "sessionHostConfigurationVersion": "",
+                "firstPartyExtension": false
+            }
+        },
+        "nestedTemplatesLocation": {
+            "value": "https://wvdportalstorageblob.blob.core.windows.net/galleryartifacts/armtemplates/Hostpool_1.0.02370.157/nestedTemplates/"
+        },
+        "tokenExpirationTime": {
+            "value": "2023-08-15T08:53:40.564Z"
+        },
+        "vmTemplate": {
+            "value": "{\"domain\":\"\",\"galleryImageOffer\":null,\"galleryImagePublisher\":null,\"galleryImageSKU\":null,\"imageType\":\"CustomImage\",\"customImageId\":\"/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/AZIMEUS-RG/providers/Microsoft.Compute/galleries/Win11CustomGallery/images/Win11CustomImage/versions/1.0.1\",\"namePrefix\":\"win11-avs\",\"osDiskType\":\"StandardSSD_LRS\",\"vmSize\":{\"id\":\"Standard_D2s_v3\",\"cores\":2,\"ram\":8},\"galleryItemId\":null,\"hibernate\":false,\"diskSizeGB\":0,\"securityType\":\"Standard\",\"secureBoot\":false,\"vTPM\":false}"
+        },
+        "availabilityOption": {
+            "value": "AvailabilitySet"
+        },
+        "availabilitySetName": {
+            "value": "win11-avs"
+        },
+        "createAvailabilitySet": {
+            "value": true
+        },
+        "availabilitySetUpdateDomainCount": {
+            "value": 3
+        },
+        "availabilitySetFaultDomainCount": {
+            "value": 2
+        },
+        "integrityMonitoring": {
+            "value": false
+        },
+        "availabilityZones": {
+            "value": []
+        },
+        "vmAdministratorAccountUsername": {
+            "value": "pavanadmin2"
+        },
+        "vmAdministratorAccountPassword": {
+            "value": null
+        },
+        "managedDiskSecurityEncryptionType": {
+            "value": "VMGuestStateOnly"
+        },
+        "availabilitySetTags": {
+            "value": {
+                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+            }
+        },
+        "applicationGroupTags": {
+            "value": {
+                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+            }
+        },
+        "hostpoolTags": {
+            "value": {}
+        },
+        "networkInterfaceTags": {
+            "value": {
+                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+            }
+        },
+        "networkSecurityGroupTags": {
+            "value": {
+                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+            }
+        }
+    }
+}

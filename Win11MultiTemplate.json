@@ -1,0 +1,71 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "imageTemplateName": {
+        "type": "string"
+      },
+      "api-version": {
+        "type": "string"
+      },
+      "svclocation": {
+        "type": "string"
+      }
+    },
+    "variables": {},
+    "resources": [
+      {
+        "name": "[parameters('imageTemplateName')]",
+        "type": "Microsoft.VirtualMachineImages/imageTemplates",
+        "apiVersion": "[parameters('api-version')]",
+        "location": "[parameters('svclocation')]",
+        "dependsOn": [],
+        "tags": {
+          "imagebuilderTemplate": "win11multi",
+          "userIdentity": "enabled"
+        },
+        "identity": {
+          "type": "UserAssigned",
+          "userAssignedIdentities": {
+            "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourcegroups/avd-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/image-builder-identity": {}
+          }
+        },
+        "properties": {
+          "buildTimeoutInMinutes": 90,
+          "vmProfile": {
+            "vmSize": "Standard_D2s_v3",
+            "osDiskSizeGB": 127
+          },
+          "source": {
+            "type": "PlatformImage",
+            "publisher": "microsoftwindowsdesktop",
+            "offer": "windows-11",
+            "sku": "win11-21h2-avd",
+            "version": "latest"
+          },
+          "customize": [
+            
+            {
+              "type": "PowerShell",
+              "runElevated": true,
+              "name": "RunPoShInstall",
+              "scriptUri": "https://softwaresb.blob.core.windows.net/scripts/install-software.ps1?sp=r&st=2023-07-15T05:28:29Z&se=2023-10-13T05:28:29Z&sv=2022-11-02&sr=b&sig=Kwwz2VX7F0K6ytpm%2B2VlTsupkurueiGj2nJcRsxzDgo%3D"
+            }
+          ],
+          "distribute": [
+            {
+              "type": "SharedImage",
+              "galleryImageId": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/AZIMEUS-RG/providers/Microsoft.Compute/galleries/Win11CustomGallery/images/Win11CustomImage",
+              "runOutputName": "win11Client",
+              "artifactTags": {
+                "Owner": "Image Builder"
+              },
+              "replicationRegions": [
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  
