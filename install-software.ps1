@@ -2,7 +2,7 @@
 Write-Host "Installing software..."
 
 # Example: Install Chrome
-$chromeInstallerUrl = "https://softwaresb.blob.core.windows.net/win11softwares/ChromeStandaloneSetup64.exe?sp=r&st=2023-07-15T18:23:35Z&se=2023-07-16T02:23:35Z&spr=https&sv=2022-11-02&sr=c&sig=qvUgCwZX9P2D%2BjfxA3%2BKbiVTFAU9LP6tpHUg1Xv2tJo%3D"
+$chromeInstallerUrl = "https://sivastorageavd001.blob.core.windows.net/sofftware/ChromeStandaloneSetup64.exe?sp=r&st=2023-07-26T06:42:46Z&se=2023-08-26T14:42:46Z&spr=https&sv=2022-11-02&sr=b&sig=2AhjkvHBc5fYfMBXFlBjG5g7UTYN5A55f9BIi6BVdio%3D"
 # $chromeInstallerPath = "C:\Temp\chrome_installer.exe"
 
 # # Download Chrome installer
