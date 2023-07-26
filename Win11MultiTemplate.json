@@ -27,7 +27,7 @@
         "identity": {
           "type": "UserAssigned",
           "userAssignedIdentities": {
-            "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourcegroups/avd-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/image-builder-identity": {}
+            "/subscriptions/efb73a22-05b0-4760-bd52-733b0d730237/resourcegroups/SivaG-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/siva-mangedidentity": {}
           }
         },
         "properties": {
@@ -49,13 +49,13 @@
               "type": "PowerShell",
               "runElevated": true,
               "name": "RunPoShInstall",
-              "scriptUri": "https://softwaresb.blob.core.windows.net/scripts/install-software.ps1?sp=r&st=2023-07-15T05:28:29Z&se=2023-10-13T05:28:29Z&sv=2022-11-02&sr=b&sig=Kwwz2VX7F0K6ytpm%2B2VlTsupkurueiGj2nJcRsxzDgo%3D"
+              "scriptUri": "https://sivastorageavd001.blob.core.windows.net/script-directory/install-software.ps1?sp=r&st=2023-07-26T07:41:15Z&se=2023-08-26T15:41:15Z&spr=https&sv=2022-11-02&sr=b&sig=%2BtVV%2BtPN33cy3ufsswsZTMaQgnAsfq8OnW7KHR0UWEA%3D"
             }
           ],
           "distribute": [
             {
               "type": "SharedImage",
-              "galleryImageId": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/AZIMEUS-RG/providers/Microsoft.Compute/galleries/Win11CustomGallery/images/Win11CustomImage",
+              "galleryImageId": "/subscriptions/efb73a22-05b0-4760-bd52-733b0d730237/resourceGroups/SivaG-RG/providers/Microsoft.Compute/galleries/siva_avdimg_W11/images/avdimg1",
               "runOutputName": "win11Client",
               "artifactTags": {
                 "Owner": "Image Builder"
