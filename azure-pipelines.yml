@@ -28,8 +28,8 @@ steps:
 #     scriptLocation: 'inlineScript'
 #     inlineScript: |
 #       az storage blob upload \
-#         --account-name sivastorageavd001 \
-#         --container-name script-directory \
+#         --account-name avdpipe \
+#         --container-name script \
 #         --overwrite true \
 #         --name install-software.ps1 \
         # --file install-software.ps1
@@ -40,7 +40,7 @@ steps:
   inputs:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'avd-pipe'
-    subscriptionId: 'efb73a22-05b0-4760-bd52-733b0d730237'
+    subscriptionId: 'b147624b-199d-44dc-98ff-3953b00c8287'
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(ResourceGroup)'
     location: '$(Location)'
