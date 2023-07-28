@@ -33,7 +33,7 @@
             "value": "Enabled"
         },
         "vmResourceGroup": {
-            "value": "avd-rg"
+            "value": "SivaG-RG"
         },
         "vmNamePrefix": {
             "value": "win11-avs-2"
@@ -77,10 +77,10 @@
             "value": ""
         },
         "virtualNetworkResourceGroupName": {
-            "value": "avd-rg"
+            "value": "SivaG-RG"
         },
         "existingVnetName": {
-            "value": "avd-vnet"
+            "value": "avd-Vnet"
         },
         "existingSubnetName": {
             "value": "default"
@@ -102,7 +102,7 @@
         },
         "virtualMachineTags": {
             "value": {
-                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+                "cm-resource-parent": ""
             }
         },
         "apiVersion": {
@@ -112,13 +112,13 @@
             "value": "d2726938-f3e6-4e9c-ba81-176f103c523a"
         },
         "vmCustomImageSourceId": {
-            "value": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/AZIMEUS-RG/providers/Microsoft.Compute/galleries/Win11CustomGallery/images/Win11CustomImage/versions/1.0.1"
+            "value": "/subscriptions/b147624b-199d-44dc-98ff-3953b00c8287/resourceGroups/SivaG-RG/providers/Microsoft.Compute/galleries/avdgallery/images/avd/versions/1.0.0"
         },
         "maxSessionLimit": {
             "value": 2
         },
         "workspaceResourceGroup": {
-            "value": "avd-rg"
+            "value": "SivaG-RG"
         },
         "workspaceName": {
             "value": "win11-workspace"
@@ -170,7 +170,7 @@
             "value": []
         },
         "vmAdministratorAccountUsername": {
-            "value": "pavanadmin2"
+            "value": "demo"
         },
         "vmAdministratorAccountPassword": {
             "value": null
@@ -180,12 +180,12 @@
         },
         "availabilitySetTags": {
             "value": {
-                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+                "cm-resource-parent": ""
             }
         },
         "applicationGroupTags": {
             "value": {
-                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+                "cm-resource-parent": ""
             }
         },
         "hostpoolTags": {
@@ -193,12 +193,12 @@
         },
         "networkInterfaceTags": {
             "value": {
-                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+                "cm-resource-parent": ""
             }
         },
         "networkSecurityGroupTags": {
             "value": {
-                "cm-resource-parent": "/subscriptions/48b01986-9159-4815-a592-ef1c0cf2d1ff/resourceGroups/avd-rg/providers/Microsoft.DesktopVirtualization/hostpool-avs"
+                "cm-resource-parent": ""
             }
         }
     }
