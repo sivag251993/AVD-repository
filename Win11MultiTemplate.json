@@ -43,15 +43,7 @@
             "sku": "win11-21h2-avd",
             "version": "latest"
           },
-          "customize": [
-            
-            {
-              "type": "PowerShell",
-              "runElevated": true,
-              "name": "RunPoShInstall",
-              "scriptUri": "https://avdpipe.blob.core.windows.net/script/install-software.ps1?sp=r&st=2023-07-28T06:30:32Z&se=2023-08-28T14:30:32Z&spr=https&sv=2022-11-02&sr=b&sig=2jHo%2Bk9sZOAtDQyU6xXdsfcMZDTy7RYjeaiPvCvuG2Y%3D"
-            }
-          ],
+        
           "distribute": [
             {
               "type": "SharedImage",
