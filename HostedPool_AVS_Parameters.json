@@ -36,7 +36,7 @@
             "value": "SivaG-RG"
         },
         "vmNamePrefix": {
-            "value": "win11-avs-2"
+            "value": "win11-avs-3"
         },
         "vmLocation": {
             "value": "eastus"
@@ -115,7 +115,7 @@
             "value": "/subscriptions/b147624b-199d-44dc-98ff-3953b00c8287/resourceGroups/SivaG-RG/providers/Microsoft.Compute/galleries/avdgallery/images/avd/versions/1.0.0"
         },
         "maxSessionLimit": {
-            "value": 2
+            "value": 4
         },
         "workspaceResourceGroup": {
             "value": "SivaG-RG"
