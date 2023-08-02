@@ -112,7 +112,7 @@
             "value": "d2726938-f3e6-4e9c-ba81-176f103c523a"
         },
         "vmCustomImageSourceId": {
-            "value": "/subscriptions/b147624b-199d-44dc-98ff-3953b00c8287/resourceGroups/SivaG-RG/providers/Microsoft.Compute/galleries/avdgallery/images/avd/versions/1.0.0"
+            "value": "/subscriptions/b147624b-199d-44dc-98ff-3953b00c8287/resourceGroups/SivaG-RG/providers/Microsoft.Compute/galleries/avdgallery/images/avd/versions/1.0.1"
         },
         "maxSessionLimit": {
             "value": 4
